@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- daisy ui setup -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tiro Bangla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Hind Siliguri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <!-- /* galada font */ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galada&family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* galada font */
+      .galada {
+        font-family: "Galada", cursive;
+      }
+
+      /* poppins style  */
+      .poppins {
+        font-family: "Poppins", sans-serif;
+      }
+      /* Tiro Bangla style*/
+      .tiro-bangla {
+        font-family: "Tiro Bangla", serif;
+      }
+      /* Hind Siliguri style */
+      .hind-siliguri {
+        font-family: "Hind Siliguri", sans-serif;
+      }
+
+      /* sweet alert style */
+      .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: #7ac142;
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+      }
+
+      .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+      }
+
+      @keyframes stroke {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      .hidden {
+        display: none;
+      }
+
+      .active {
+        background-color: #add5d4;
+        color: white;
+      }
+      .active:hover {
+        background-color: #add5d4;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="font-[poppins]">
+    <header>
+      <!-- navbar section -->
+      <nav
+        id="nav"
+        class="border-[#dedddd] border-b-2 bg-[#e8e8e8] shadow-slate-950 fixed z-10 w-full hidden top-0"
+      >
+        <div class="container mx-auto">
+          <div class="flex justify-between py-6 w-11/12 mx-auto">
+            <div class="flex justify-center items-center gap-1">
+              <h1 class="font-semibold text-xl">English</h1>
+              <img src="./assets/logo.png" alt="" />
+              <h1 class="font-[tiro-bangla] text-xl">জানালা</h1>
+            </div>
+            <div class="flex justify-center items-center gap-3">
+              <button
+                id="faq_btn"
+                class="btn btn-outline btn-info text-[#422AD5] font-semibold text-sm border-[#422AD5]"
+              >
+                <img src="./assets/fa-circle-question.png" alt="" />FAQ
+              </button>
+              <button
+                id="learn-btn"
+                class="btn btn-outline btn-info text-[#422AD5] font-semibold text-sm border-[#422AD5]"
+              >
+                <img src="./assets/fa-book-open.png" alt="" />Learn
+              </button>
+              <button
+                id="logOut"
+                onclick="logInPage()"
+                class="btn btn-outline btn-info text-[#422AD5] font-semibold text-sm border-[#422AD5]"
+              >
+                <img
+                  src="./assets/fa-arrow-right-from-bracket.png"
+                  alt=""
+                />Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main  -->
+    <main class="">
+      <!-- hero section -->
+      <div class="container mx-auto mt-3" id="hero">
+        <div class="flex justify-between items-center w-11/12 mx-auto">
+          <div class="space-y-4 flex flex-col">
+            <h6 class="text-4xl font-extrabold">
+              <span class="text-[#00BCFF]">English</span> is Easy!!
+            </h6>
+            <h1 class="font-[galada] font-medium text-[#18181B]">
+              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
+              <br />অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons
+              আপনাকে নিয়ে যাবে অন্য একটি Level এ
+            </h1>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter Your Name"
+              class="input"
+            />
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter Login Code(123456)"
+              class="input"
+            />
+            <button
+              onclick="checkPassword(),checkName(),succesfulLogin()"
+              class="btn btn-primary w-32 transition-transform duration-300 ease-out hover:scale-110 hover:shadow-xl"
+            >
+              Get Started
+            </button>
+          </div>
+          <div><img src="./assets/hero-student.png" alt="" /></div>
+        </div>
+      </div>
+
+      <!-- alert card for password -->
+      <div
+        class="w-11/12 mx-auto hidden fixed inset-0 top-1"
+        onclick="hideMessage()"
+        id="alert-card"
+      >
+        <div role="alert" class="alert alert-error">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 shrink-0 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+          <span
+            >Warning: Invalid Password! <br />
+            Please Type:123456</span
+          >
+        </div>
+      </div>
+      <!-- alert card for name -->
+      <div
+        class="w-11/12 mx-auto hidden fixed inset-0 top-1"
+        onclick="hideMessageForName()"
+        id="alert-card-for-name"
+      >
+        <div role="alert" class="alert alert-warning">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 shrink-0 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+          <span
+            >Warning: Invalid Name! <br />
+            Please Type A Valid Name</span
+          >
+        </div>
+      </div>
+
+      <!-- Sweet Alert Successful message -->
+      <div
+        id="sweet-alert"
+        class="fixed inset-0 items-center justify-center z-50 flex"
+      >
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div
+          class="bg-white rounded-lg p-8 shadow-xl transform transition-all max-w-md w-full relative z-10 flex flex-col items-center"
+        >
+          <div
+            class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-4"
+          >
+            <svg
+              class="checkmark w-12 h-12 text-green-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 52 52"
+            >
+              <circle
+                class="checkmark__circle"
+                cx="26"
+                cy="26"
+                r="25"
+                fill="none"
+                stroke="#7AC142"
+                stroke-width="2"
+              />
+              <path
+                class="checkmark__check"
+                fill="none"
+                stroke="#7AC142"
+                stroke-width="4"
+                d="M14.1 27.2l7.1 7.2 16.7-16.8"
+              />
+            </svg>
+          </div>
+
+          <h2 class="text-2xl font-bold text-gray-800 mb-2">Success!</h2>
+          <p id="sweet-alert-message" class="text-center text-gray-600 mb-6">
+            Login successful!
+          </p>
+        </div>
+      </div>
+
+      <!-- Learn Vocabulary section -->
+      <div
+        id="learn-section"
+        class="pt-24 hidden m-16 container mx-auto space-y-10"
+      >
+        <h1 class="text-center text-3xl font-bold">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h1>
+        <div
+          id="lesson-container"
+          class="text-center gap-3 flex justify-center flex-row"
+        ></div>
+        <!-- loader section -->
+        <section id="loader" class="text-center hidden">
+          <span class="loading loading-ball loading-xs"></span>
+          <span class="loading loading-ball loading-sm"></span>
+          <span class="loading loading-ball loading-md"></span>
+          <span class="loading loading-ball loading-lg"></span>
+          <span class="loading loading-ball loading-xl"></span>
+        </section>
+        <!-- showing blank section when no level is selected-->
+
+        <section id="no-lesson" class="container mx-auto block">
+          <div
+            class="w-11/12 bg-[#F8F8F8] mx-auto p-10 flex flex-col items-center justify-center gap-3 rounded-lg"
+          >
+            <h1 class="font-[hind-siliguri] font-normal text-sm text-[#79716B]">
+              আপনি এখনো কোন Lesson Select করেন নি
+            </h1>
+            <h1
+              class="font-[hind-siliguri] text-[#292524] font-medium text-3xl"
+            >
+              একটি Lesson Select করুন।
+            </h1>
+          </div>
+        </section>
+
+        <!-- words container div -->
+        <div id="words-main-container" class="container mx-auto hidden">
+          <div
+            id="words-container"
+            class="w-11/12 bg-[#F8F8F8] mx-auto grid grid-cols-4 gap-4 p-4 rounded-lg"
+          ></div>
+        </div>
+
+        <!-- no vocabulary section -->
+
+        <section id="no-vocabulary" class="container mx-auto hidden">
+          <div
+            class="w-11/12 mx-auto bg-[#F8F8F8] flex flex-col gap-3 p-14 justify-center"
+          >
+            <img class="w-20 mx-auto" src="./assets/alert-error.png" alt="" />
+            <h1 class="text-center text-[#79716B] font-normal text-sm">
+              এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+            </h1>
+            <h1 class="text-center text-[#292524] font-medium text-3xl">
+              নেক্সট Lesson এ যান
+            </h1>
+          </div>
+        </section>
+      </div>
+
+      <!-- card details section -->
+
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box flex flex-col justify-start">
+          <div
+            id="word-details"
+            class="border-2 border-[#b5c1ce] rounded p-4 mb-4"
+          ></div>
+          <div class="flex justify-start">
+            <form method="dialog">
+              <button
+                class="btn btn-primary transition-transform duration-300 ease-out hover:scale-110 hover:shadow-xl"
+              >
+                Complete Learning
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- faq section -->
+      <section id="faq" class="hidden">
+        <h1 class="text-center mb-5 mt-80 text-3xl font-bold">
+          <span class="text-[#00BCFF] font-bold text-3xl">Frequently</span>
+          Asked Questions
+        </h1>
+        <div class="container mx-auto mt-10 mb-16">
+          <div class="w-11/12 mx-auto flex flex-col gap-y-5">
+            <div
+              class="collapse collapse-plus bg-[#f8f8f8] border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" checked="checked" />
+              <div class="collapse-title font-semibold">
+                What difference between var, let, and const
+              </div>
+              <div class="text-[#62748E] collapse-content text-sm">
+                => var: Declares variables with function or global scope and
+                allows re-declaration and updates within the same scope.
+                <br />=> let: Declares variables with block scope, allowing
+                updates but not re-declaration within the same block. <br />=>
+                const: Declares block-scoped variables that cannot be reassigned
+                after their initial assignment.
+              </div>
+            </div>
+            <div
+              class="collapse collapse-plus bg-[#f8f8f8] border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                What is the difference between map(), forEach(), and filter() ?
+              </div>
+              <div class="text-[#62748E] collapse-content text-sm">
+                => The map() method loops through each element in array and
+                calls the provided function for each element. This method
+                creates a new array and doesn’t alter the original array.
+                <br />
+                => The filter() method in JavaScript creates a new array with
+                the elements that satisfies the provided condition. This method
+                calls a provided function for each element in array and verifies
+                the condition given in the provided function and passes only
+                those elements that satisfy the given condition. <br />=>
+                forEach() is used to execute the same code on every element in
+                an array but does not change the array and it returns undefined.
+                Example: In the example below we would use .forEach() to iterate
+                over an array of food and log that we would want to eat each of
+                them.
+              </div>
+            </div>
+            <div
+              class="collapse collapse-plus bg-[#f8f8f8] border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                Explain arrow functions and how they are different from regular
+                functions?
+              </div>
+              <div class="collapse-content text-sm text-[#62748E]">
+                Regular functions and arrow functions are two common ways to
+                define functions in JavaScript, each with distinct behaviors.
+                <br />=> Regular functions offer traditional syntax and this
+                context handling <br />=> Arrow functions provide a concise
+                syntax and lexical this binding, making them ideal for callbacks
+                and simpler expressions.
+              </div>
+            </div>
+            <div
+              class="collapse collapse-plus bg-[#f8f8f8] border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                How JavaScript Promises work
+              </div>
+              <div class="collapse-content text-sm text-[#62748E]">
+                JavaScript Promises make handling asynchronous operations like
+                API calls, file loading, or time delays easier. Think of a
+                Promise as a placeholder for a value that will be available in
+                the future. It can be in one of three states- <br />
+                => Pending: The task is in the initial state.
+                <br />=> Fulfilled: The task was completed successfully, and the
+                result is available. <br />=> Rejected: The task failed, and an
+                error is provided.
+              </div>
+            </div>
+            <div
+              class="collapse collapse-plus bg-[#f8f8f8] border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                How closures work in JavaScript
+              </div>
+              <div class="collapse-content text-sm text-[#62748E]">
+                A closure is a function that allows access to variables from its
+                outer function and global variables, even after the outer
+                function has finished executing. This enables functions to
+                “remember” their environment. Some of the features of the
+                closures are mentioned below: <br />
+                => A closure allows a function to access variables from its
+                outer (enclosing) function even after it has finished executing.
+                => Global variables can be made private within a function using
+                closures, ensuring they cannot be accessed or modified directly
+                from outside.
+                <br />=> Closures provide a way to encapsulate private data and
+                create public methods to interact with it. Closures help retain
+                references to variables that would otherwise be lost after the
+                execution of the outer function.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <div id="footer" class="mt-32 border-t container mx-auto border-[#edd6d6]">
+      <footer
+        class="footer w-11/12 mx-auto sm:footer-horizontal items-center p-4"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-center items-center gap-1">
+            <h1 class="font-semibold text-base">English</h1>
+            <img class="w-8" src="./assets/logo.png" alt="" />
+            <h1 class="font-[tiro-bangla] text-base">জানালা</h1>
+          </div>
+          <div>
+            <h1 class="text-[hind-siliguri] font-semibold text-xs">
+              ইংরেজি শিখুন সহজে
+            </h1>
+            <h1 class="font-semibold text-[10px] mt-2">
+              Providing ED-Tech Applications since 2025
+            </h1>
+          </div>
+        </div>
+        <nav
+          class="grid-flow-col gap-4 md:place-self-center items-center md:justify-self-end"
+        >
+          <a
+            class="cursor-pointer transition-transform duration-300 ease-out hover:scale-125 hover:shadow-xl"
+            href="https://www.facebook.com"
+            target="_blank"
+          >
+            <img src="./assets/fb-thumb.png" alt="" />
+          </a>
+          <a
+            class="cursor-pointer transition-transform duration-300 ease-out hover:scale-125 hover:shadow-xl"
+            href="https://www.youtube.com"
+            target="_blank"
+          >
+            <img src="./assets/youtube-thumb.png" alt="" />
+          </a>
+          <a
+            class="cursor-pointer transition-transform duration-300 ease-out hover:scale-125 hover:shadow-xl"
+            href="https://www.instagram.com"
+            target="_blank"
+          >
+            <img src="./assets/instagram-thumb.png" alt="" />
+          </a>
+          <a
+            class="cursor-pointer transition-transform duration-300 ease-out hover:scale-125 hover:shadow-xl"
+            href="https://www.github.com"
+            target="_blank"
+          >
+            <img src="./assets/github-thumb.png" alt="" />
+          </a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
